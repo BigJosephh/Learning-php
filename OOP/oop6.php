@@ -34,11 +34,10 @@
     {
         protected $Isim = "Yusuf Mert";
         protected const Soyisim = "Dereli";
-       
     }
 
     class Iki extends Bir            // Burada kullandigimiz extends ifadesi (Bir) classindan turedigini belirmek icin kullaniliyor.
-    {   
+    {
         public function Bilgi()
         {
             $metin = "Isim Soy Isim :" . $this->Isim . " " . self::Soyisim . "<br/>";
@@ -53,5 +52,3 @@
 </body>
 
 </html>
-
-

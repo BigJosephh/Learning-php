@@ -8,7 +8,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Function 4</title>
+    <title>P D O 3</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="">
@@ -16,20 +16,19 @@
 
 <body>
     <?php
-
-    function TABLO($isim, $soyisim, $sehir, $meslek, $yas)
-    {
-        $Gelen_isim = $isim;
-        $Gelen_soyisim = $soyisim;
-        $Gelen_sehir = $sehir;
-        $Gelen_meslek = $meslek;
-        $Gelen_yas = $yas;
-
-        $Kisi_Karti = "Adi :" . $Gelen_isim . "<br/>" . "Soyisim :" . $Gelen_soyisim . "<br/>" . "Sehir :" . $Gelen_sehir . "<br/>" . "Meslek: :" . $Gelen_meslek . "<br/>" . "Yas :" . $Gelen_yas;
-        echo $Kisi_Karti;
+    try {
+        $VeritabaniBaglantisiBir = new PDO("mysql:host=localhost;dbname=Deneme;charset=UTF8", "root", "root");
+        $VeritabaniBaglantisiIki = new PDO("mysql:host=localhost;dbname=phpDeneme;charset=UTF8", "root", "root");
+        echo "Veritabani baglantilari kuruldu! <br/> ";
+    } catch (PDOException $HataMesaji) {
+        echo "Veritabani baglatisina baglanamadi! <br/> ";
+        echo "veritabani icin hata aciklamasi  " . $HataMesaji->getMessage();
+        die;
     }
 
-    TABLO("ahmet", "dereli", "konya", "doktor", 20);
+
+    $VeritabaniBaglantisiBir = null;
+    $VeritabaniBaglantisiIki = null;
 
     ?>
     <script src="" async defer></script>

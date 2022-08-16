@@ -27,7 +27,6 @@
     {
         public $Isim    = "YUSUF MERT";
         public $SoyIsim = "DERELI";
-
     }
     trait Bilgi
     {
