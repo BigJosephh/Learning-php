@@ -52,7 +52,7 @@
         die();
     }
 
-    $Sorgu = $VeritabaniBaglantisi->query("SELECT * FROM id", PDO::FETCH_BOTH); // ("SELECT isim,yas FROM id") => bu sekilde yaparsak id tablosunda sadece isim ve yas degerlerinialir.
+    $Sorgu = $VeritabaniBaglantisi->query("SELECT * FROM users", PDO::FETCH_BOTH); // ("SELECT isim,yas FROM id") => bu sekilde yaparsak id tablosunda sadece isim ve yas degerlerinialir.
     if ($Sorgu) {
         foreach ($Sorgu as $Satirlar) {
             echo "Kullanici Adi : " . $Satirlar["kullaniciadi"] . "<br/>";
@@ -66,7 +66,7 @@
         echo "Sorgu islemi gerceklestirilemedi! ";
     }
 
-    $Sorgu = $VeritabaniBaglantisi->query("SELECT * FROM id", PDO::FETCH_NUM); // ("SELECT isim,yas FROM id") => bu sekilde yaparsak id tablosunda sadece isim ve yas degerlerinialir.
+    $Sorgu = $VeritabaniBaglantisi->query("SELECT * FROM users", PDO::FETCH_NUM); // ("SELECT isim,yas FROM id") => bu sekilde yaparsak id tablosunda sadece isim ve yas degerlerinialir.
     if ($Sorgu) {
         foreach ($Sorgu as $Satirlar) {
             echo "Kullanici Adi : " . $Satirlar[0] . "<br/>";
@@ -80,7 +80,7 @@
         echo "Sorgu islemi gerceklestirilemedi! ";
     }
 
-    $Sorgu = $VeritabaniBaglantisi->query("SELECT * FROM id", PDO::FETCH_OBJ); // ("SELECT isim,yas FROM id") => bu sekilde yaparsak id tablosunda sadece isim ve yas degerlerinialir.
+    $Sorgu = $VeritabaniBaglantisi->query("SELECT * FROM users", PDO::FETCH_OBJ); // ("SELECT isim,yas FROM id") => bu sekilde yaparsak id tablosunda sadece isim ve yas degerlerinialir.
     if ($Sorgu) {
         foreach ($Sorgu as $Satirlar) {
             echo "Kullanici Adi : " . $Satirlar->kullaniciadi . "<br/>";

@@ -52,7 +52,7 @@
         die();
     }
 
-    $Sorgu = $VeritabaniBaglantisi->query("SELECT * FROM id"); // ("SELECT isim,yas FROM id") => bu sekilde yaparsak id tablosunda sadece isim ve yas degerlerinialir.
+    $Sorgu = $VeritabaniBaglantisi->query("SELECT * FROM users"); // ("SELECT isim,yas FROM id") => bu sekilde yaparsak id tablosunda sadece isim ve yas degerlerinialir.
     if ($Sorgu) {
         foreach ($Sorgu as $Satirlar) {
             echo "<pre>";
@@ -64,7 +64,7 @@
     }
 
 
-    $Sorgu = $VeritabaniBaglantisi->query("SELECT * FROM id"); // ("SELECT isim,yas FROM id") => bu sekilde yaparsak id tablosunda sadece isim ve yas degerlerinialir.
+    $Sorgu = $VeritabaniBaglantisi->query("SELECT * FROM users"); // ("SELECT isim,yas FROM id") => bu sekilde yaparsak id tablosunda sadece isim ve yas degerlerinialir.
     if ($Sorgu) {
         foreach ($Sorgu as $Satirlar) {
             echo "Kullanici Adi : " . $Satirlar["kullaniciadi"] . "<br/>";

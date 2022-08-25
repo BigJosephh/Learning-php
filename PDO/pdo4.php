@@ -48,7 +48,7 @@
         die();
     }
 
-    $Sorgu = $VeritabaniBaglantisi->query("SELECT * FROM ID", PDO::FETCH_ASSOC);
+    $Sorgu = $VeritabaniBaglantisi->query("SELECT * FROM users", PDO::FETCH_ASSOC);
 
     echo "<pre>";
     print_r($Sorgu);

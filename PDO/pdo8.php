@@ -4,24 +4,19 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
-</head>
-
-<body>
-    <?php
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <?php
             /*
-                LIMIT     : MySQL sunucusunda database icerisinde bulunan herhangi bir tablonun islem esnasinda tum verilerini islemek
-                yerine sadece belirtilen adet veya aralik kadar islemek istenildigini belirtmek icin kullanilir.
-
-                ORDER BY  : MySQL sunucusunda database icerisinde bulunan herhangi bir tablonun verilerine islem esnasinda hangi sira 
-                veya siralar dahilinde erisilmek istenildigini belirtmek icin kullanilir.
+                WHERE   : MySQL sunucundaki database icerisinde bulunan herhangi bir tablonun islem esnasinda tum verilerini islemek yerine
+                sadece kosula bagli verilerin islemek istenildigini belirtmek icin kullanilir.
             */
 
             try {
@@ -33,8 +28,8 @@
                 die();
             }
 
-            $Sorgu = $VeritabaniBaglantisi->query("SELECT * FROM users LIMIT 1", PDO::FETCH_ASSOC);
-                if ($Sorgu) {
+            $Sorgu = $VeritabaniBaglantisi->query("SELECT * FROM users WHERE kullaniciadi==yavuztdereli", PDO::FETCH_ASSOC);
+            if ($Sorgu) {
                     foreach ($Sorgu as $Satirlar) {
                         echo "Kullanici Adi : " . " | " . $Satirlar["kullaniciadi"] . "<br/>";
                         echo "Kullanici Sifresi : " . " | " . $Satirlar["sifre"] . "<br/>";
@@ -47,9 +42,7 @@
                 }
 
             $VeritabaniBaglantisi = null;
-
-    ?>
-    <script src="" async defer></script>
-</body>
-
+        ?>
+        <script src="" async defer></script>
+    </body>
 </html>
