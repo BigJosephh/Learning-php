@@ -1,9 +1,11 @@
 <?php
 include("baglan.php");
+
 $Gelen_ID  = Filtre($_GET["id"]);
 
 $HitSayma = $VeritabaniBaglantisi->prepare("UPDATE makaleler SET gosterimsayisi=gosterimsayisi+1 WHERE id = ?");
 $HitSayma->execute([$Gelen_ID]);
+
 ?>
 
 <!DOCTYPE html>
@@ -31,6 +33,8 @@ $HitSayma->execute([$Gelen_ID]);
         </tr>
 
         <?php
+        
+
         $Sorgu = $VeritabaniBaglantisi->prepare("SELECT * FROM makaleler WHERE id = ?");
         $Sorgu->execute([$Gelen_ID]);
         $KayitSayisi = $Sorgu->rowCount();
@@ -50,7 +54,7 @@ $HitSayma->execute([$Gelen_ID]);
             </tr>
             <tr height="30 ">
                 <td colspan="2" align="center">
-                    Bu makale <?php echo $Kayitlar["gosterimsayisi"] ?> defa goruntulendi : 
+                    Bu makale <?php echo $Kayitlar["gosterimsayisi"] ?> defa goruntulendi :
                 </td>
             </tr>
 
